@@ -50,16 +50,16 @@ This client is compatibale with Ruby 2.0 and above. It won't run with Ruby 1.8 o
 access to the most common and useful API functions available and a full version module that gives the user complete
 control over various parameter settings and complete access to all API endpoints.
 
-### lite_client Module
+### LiteClient Module
 
-The lite_client module is sufficient for most applications and offers the ability to quickly and easily
+The LiteClient module is sufficient for most applications and offers the ability to quickly and easily
 compute keywords for a text, semantically compare two texts, retrieve similar terms, create category filters for
 semantic filtering and generate semantic fingerprints of a given text. To get started, create an instance of the
 lightweight client by passing your API key as follows:  
 
 ```ruby
 require 'retina-sdk'
-lite_client = RetinaSDK::lite_client("your_api_key")
+lite_client = RetinaSDK::LiteClient.new("your_api_key")
 ```
 
 The `lite_client` object has 5 methods for accessing the API. You can:
@@ -104,19 +104,19 @@ neurology_filter = lite_client.create_category_filter(["neuron", "synapse", "neo
 0.056544622895956895 # low semantic similarity -> negative classification
 ```
 
-### full_client Module
+### FullClient Module
 
 Using this client, you will have access to the full functionality of
 [Cortical.io's Retina API](http://api.cortical.io/).
 
-As with the lite_client, the full_client must be instantiated with a valid Cortical.io API key, but you can also change
+As with the LiteClient, the FullClient must be instantiated with a valid Cortical.io API key, but you can also change
 the default host address (in case you have your own
 [AWS](https://aws.amazon.com/marketplace/seller-profile?id=c88ca878-a648-464c-b29b-38ba057bd2f5) instance),
 as well as which retina to use.
 
 ```ruby
 require 'retina-sdk'
-full_client = RetinaSDK::full_client.new("your_api_key", api_server: "http://api.cortical.io/rest", retina_name: "en_associative")```
+full_client = RetinaSDK::FullClient.new("your_api_key", api_server: "http://api.cortical.io/rest", retina_name: "en_associative")```
 
 On the full client, you get responses back in accordance with the response objects delivered from the
 [REST api](http://api.cortical.io/). For
@@ -152,8 +152,7 @@ the `json` module to convert it to a valid `json` string (`JSON.dump()`). You ca
 Metric(@cosine_similarity=0.032885723350542136, @jaccard_distance=0.9836956521739131, @overlapping_all=6, @overlapping_left_right=0.02631578947368421, @overlapping_right_left=0.0410958904109589, @size_left=228, @size_right=146, @weighted_scoring=0.6719223186964691, @euclidean_distance=0.9679144385026738)
 ```
 
-
-#### full_client Example Usage
+#### FullClient Example Usage
 
 Please note that in the Ruby version, the client uses the conventional snake case notation for method names. The required parameters in method calls are passed as
 regular parameters whereas the optional uses named parameters (see examples below).
