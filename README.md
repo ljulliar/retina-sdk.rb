@@ -41,7 +41,7 @@ Or install it yourself as:
 This gem will not pull in any other library.
 
 *IMPORTANT NOTE*
-This client is compatibale with Ruby 2.0 and above. It won't run with Ruby 1.8 or 1.9. It is compatible with 2.x.x versions of
+This client is compatible with Ruby 2.0 and above. It won't run with Ruby 1.8 or 1.9. It is compatible with 2.x.x versions of
 [cortical.io's api](http://api.cortical.io)</a>.
 
 ## Usage
